@@ -1,4 +1,2 @@
-function ab(){
-    alert("Привет!");
-    document.getElementById("hello").innerHTML="Hello World";
-}
+alert("Здравствуйте!!!");
+document.writeln("Здравствуйте!!!");
