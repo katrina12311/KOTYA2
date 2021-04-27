@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Красько Екатерина</title>
+<script type="text/javascript">
+window.onload = function() {
+    var button = document.getElementById('input_button_bg_change');
+    var body = document.getElementsByTagName('body')[0];
+    var colors = ['#84c3be', '#bdb76b', '#ff033e', '#808000', '#ffa500', '#d76e00', '#fb607f'];
+    button.onclick = function() {
+        body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    };
+};
+</script>
+</head>
+<body>
+    <input type="button" id="input_button_bg_change" value="Изменить цвет"/>
+</body>
+</html>

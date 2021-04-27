@@ -1,0 +1,45 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function() {
+if($(this).scrollTop() != 0) {
+$('#toTop').fadeIn();
+} else { 
+$('#toTop').fadeOut();
+}
+});
+$('#toTop').click(function() {
+$('body,html').animate({scrollTop:0},800);
+});
+}); 
+</script>
+    <head>
+    <meta charset="utf-8" />
+    <title>Красько Екатерина</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <body style="background-color:87cefa">
+    <script language="JavaScript"> 
+	    function left(){
+	    $("#lilac").css("position", "relative");
+	    $("#lilac").animate({right: "+=100px", 'width': '-=0px'}, 100);}
+	    function right(){
+	    $("#lilac").css("position", "relative");
+	    $("#lilac").animate({right: "-=100px", 'width': '-=0px'}, 100);}
+	    function up(){
+	    $("#lilac").css("position", "relative");
+	    $("#lilac").animate({top: "-=100px", 'height': '-=0px'}, 100);}
+	    function down(){
+	    $("#lilac").css("position", "relative");
+	    $("#lilac").animate({top: "+=100px", 'height': '-=0px'}, 100);}
+    </script>
+    </head>
+<body>
+<p><input type="button" value="Влево" onClick="left()"><br>
+<br><input type="reset" value="Вправо" onClick="right()"><br>
+<br><input type="reset" value="Вверх" onClick="up()"><br>
+<br><input type="reset" value="Вниз" onClick="down()"></p>
+<p><img id="lilac" src="https://avatars.mds.yandex.net/get-zen_doc/1567436/pub_5d3cf64f06cc4600ae85f121_5d3cf7b84735a600acedd098/scale_1200" height="400" width="500" style="margin:100px"></img></p>
+</form></p>
+</body>
+</html>

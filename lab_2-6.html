@@ -1,0 +1,73 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function() {
+if($(this).scrollTop() != 0) {
+$('#toTop').fadeIn();
+} else { 
+$('#toTop').fadeOut();
+}
+});
+$('#toTop').click(function() {
+$('body,html').animate({scrollTop:0},800);
+});
+}); 
+</script>
+    <head>
+        <title>Красько Екатерина</title>
+    </head>
+    <body style="background-color:faf0e6">
+    <body>
+	<h1>Какой ваш любимый цвет?</h1>
+	<h3>Выберите один из вариантов, предложенных ниже</h3>
+        <form><button id="1">Черный</button>
+        <label id="l1"></label>
+        <output id="p1" type="text" name="1" ></output><br>
+        <br><button id="2">Красный</button>
+        <label id="l2"></label>
+        <output id="p2" type="text" name="2" readonly></output><br>
+        <br><button id="3">Синий</button>
+        <label id="l3"></label>
+        <output id="p3" type="text" name="3" readonly></output><br>
+		<br><button id="4">Другое</button>
+        <label id="l4"></label>
+        <output id="p4" type="text" name="4" readonly></output><br></form>
+	<br><button id="button"> Показать процентное соотношения</button>
+    <script type="text/javascript">
+        var a = 0;
+        var b = 0;
+        var c = 0;
+		var d = 0;
+        var sum = 0;
+        $(document).ready(function(){
+            $("#button").click(function(){
+                document.getElementById("p1").value = " В процентах: "+(a/sum)*100+"%";
+                document.getElementById("p2").value = " В процентах: "+(b/sum)*100+"%";
+                document.getElementById("p3").value = " В процентах: "+(c/sum)*100+"%";
+				document.getElementById("p4").value = " В процентах: "+(d/sum)*100+"%";
+            });
+            $("#1").click(function(){
+                a +=1;
+                sum +=1;
+                $("#l1").text("Количество проголосовавших: "+a);
+                return false; });
+            $("#2").click(function(){
+                b +=1;
+                sum +=1;
+                $("#l2").text("Количество проголосовавших: "+b);
+                return false; });
+            $("#3").click(function(){
+                c +=1;
+                sum +=1;
+                $("#l3").text("Количество проголосовавших:  "+c);
+                return false; });
+			$("#4").click(function(){
+                d +=1;
+                sum +=1;
+                $("#l4").text("Количество проголосовавших:  "+d);
+                return false; });
+        });
+    </script>
+    </body>
+</html>

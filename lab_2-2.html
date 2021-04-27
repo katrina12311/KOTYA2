@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>
+Красько Екатерина
+</title>
+</head>
+<body style="background-color:87cefa">
+    <body>
+    <p><b>Форма заполнения данных:</b><br><br>
+    <form name="user">
+        Имя * <input type="text" name="name" size="30"><br> 
+        Пароль * <input type="text" name="pass" size="30"><br>
+        Подтверждение пароля * <input type="text" name="pass1" size="30"><br> 
+        Email * <input type="text" name="e" size="50"><br>
+        Тема сообщения <input type="text" name="tema" size="30"><br>
+        Сообщение  <input type="textarea" name="text" size="100"><br>
+        <font size=4>* - отмечены поля, обязательные для заполнения</font><br><br>
+        <input type="button" value="Отправить" onClick="doSend()">
+        <input type="reset" value="Очистить">
+      </form>
+    </p>
+  </body>
+    <script language="JavaScript"> 
+        
+        function doSend(){
+            var pas=document.user.e.value.indexOf("@",1);
+            if(document.user.name.value==""){
+                alert('Заполните поле Имя');
+                document.user.name.style.borderColor="#FF0000";
+            }
+            else if(document.user.pass.value==""){
+                document.user.name.style.borderColor="#000000";
+                alert('Заполните поле Пароль');
+                document.user.pass.style.borderColor="#FF0000";
+            }
+            else if(document.user.pass.value.length<4){
+                document.user.name.style.borderColor="#000000";
+                alert('Пароль должен быть больше 4 символов');
+                document.user.pass.style.borderColor="#FF0000";
+            }
+            else if(document.user.pass1.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                alert('Заполните поле');
+                document.user.pass1.style.borderColor="#FF0000"
+            }
+            else if(document.user.pass1.value!=document.user.pass.value){
+                document.user.name.style.borderColor="#000000";
+                alert('Пароли должны совпадать');
+                document.user.pass.style.borderColor="#FF0000";
+                document.user.pass1.style.borderColor="#FF0000";
+            }
+            else if(document.user.e.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.pass1.style.borderColor="#000000";
+                alert('Заполните поле Email'); 
+                document.user.e.style.borderColor="#FF0000";
+            }
+            else if(pas==-1){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.pass1.style.borderColor="#000000";
+                alert('Поле Email должно содержать @');
+                document.user.e.style.borderColor="#FF0000";
+            }
+            else if(document.user.text.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.pass1.style.borderColor="#000000";
+                document.user.e.style.borderColor="#000000";
+                alert('Заполните поле Сообщение');
+                document.user.text.style.borderColor="#FF0000";
+            }
+            else if(document.user.text.value.length<10){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.pass1.style.borderColor="#000000";
+                document.user.e.style.borderColor="#000000";
+                alert('Поле Сообщение должно быть больше 10 символов');
+                document.user.text.style.borderColor="#FF0000";
+            }
+            else{ 
+                document.user.submit();
+            }
+        }
+    </script>
+  </head>
+</html>

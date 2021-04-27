@@ -1,0 +1,50 @@
+<html>
+ <head>
+ <title>Красько Екатерина</title>
+</head>
+<body style="background-color:e8ccff">
+<body>
+<form>
+<div class="drag">
+<div id="mir">
+<img src="https://proprikol.ru/wp-content/uploads/2020/08/krasivye-kartinki-kotikov-17.jpg" height="400" width="500" ></img>
+</div>
+</div>
+</form>
+<script>
+	let mir = document.getElementById('mir'); 
+	mir.onmousedown = function(e) { 
+	    let coords = getCoords(mir); 
+	    let shiftX = e.pageX - coords.left; 
+	    let shiftY = e.pageY - coords.top; 
+	    mir.style.position = 'absolute'; 
+	    document.body.appendChild(mir); 
+        moveAt(e); 
+	    mir.style.zIndex = 1000;
+	        function moveAt(e) { 
+	        mir.style.left = e.pageX - shiftX + 'px'; 
+	        mir.style.top = e.pageY - shiftY + 'px'; 
+	        } 
+	        document.onmousemove = function(e) { 
+	        moveAt(e); 
+	        }; 
+	        mir.onmouseup = function() { 
+	        document.onmousemove = null; 
+	        mir.onmouseup = null; 
+	        }; 
+	} 
+	mir.ondragstart = function() { 
+	    return false; 
+	    }; 
+	function getCoords(elem) { 
+	    let box = elem.getBoundingClientRect(); 
+	    return { 
+	    top: box.top + pageYOffset, 
+	    left: box.left + pageXOffset 
+        }; 
+    } 
+</script>
+</p>
+<p>Нажмите на картинку ЛКМ и перетащите</p>
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function() {
+if($(this).scrollTop() != 0) {
+$('#toTop').fadeIn();
+} else { 
+$('#toTop').fadeOut();
+}
+});
+$('#toTop').click(function() {
+$('body,html').animate({scrollTop:0},800);
+});
+}); 
+</script>
+    <head>
+    <body style="background-color:cc4e5c">
+    <meta charset="utf-8" />
+    <title>Красько Екатерина</title>
+    <script language="JavaScript"> 
+	$("html").mousemove(function (m) {
+	$("#xy").html('Координаты мыши: X: '+m.pageX+', Y: '+m.pageY); });
+    </script>
+    </head>
+<body>
+    <p> Подвигайте указателем мышки и увидите ее координаты <p>
+<p id="xy"></p>
+</div> 
+</form>
+</p>
+</body>
+</html>
